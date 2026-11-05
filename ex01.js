@@ -17,3 +17,23 @@ const path = require("path");
 const filePath = path.join(__dirname, "sample.txt");
 
 // write your code here
+
+fs.readFile('sample.txt', 'utf8', (err, data) => {
+    if (err){
+        console.log("error read");
+        return;
+    }
+    
+    console.log('File Content: ');
+    console.log(data);
+    
+    fs.stat('sample.txt', (err, stats) => {
+        if (err){
+            console.log("error stat");
+            return;
+        }
+
+        console.log('Size: ' + stats.size + ' bytes');
+        console.log(`Created At: ${stats.birthtime.toISOString()}`);
+    })
+})
