@@ -15,3 +15,16 @@
 const os = require("os");
 
 // write your code here
+// המטרה: כל 2 שניות לחשב ולהדפיס את אחוז הזיכרון הפנוי, ולעצור אחרי 5 הדפסות.
+
+let count = 0;
+const intervalId = setInterval(() => {
+    count += 1;
+    const freeMemory = (os.freemem() / os.totalmem() * 100).toFixed(2);
+    console.log('Free Memory: ' + freeMemory + '%');
+    
+    if (count === 5){
+        clearInterval(intervalId);
+        console.log('Memory logging complete.')
+    }
+}, 2000);
