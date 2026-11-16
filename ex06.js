@@ -15,3 +15,8 @@ const path = require("path");
 const filePath = path.join(__dirname, "log.txt");
 
 // write your code here
+let currentTime = new Date().toISOString();
+currentTime += ' - Log entry\n';
+fs.appendFile(filePath, currentTime, () => {
+    console.log(currentTime);
+});
