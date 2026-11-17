@@ -12,3 +12,19 @@
 // Run: node ex10.js
 
 // write your code here
+
+const msg = 'Message ';
+let count = 0;
+
+setTimeout(() => {
+    count++
+    console.log(msg + count);
+    setTimeout(() => {
+        count++
+        console.log(msg + count);
+        setTimeout(() => {
+            count++
+            console.log(msg + count);
+        }, 1000);
+    }, 1000);
+}, 1000);
