@@ -12,3 +12,12 @@
 const os = require("os");
 
 // write your code here
+
+function getUpTime(func) {
+    const upTime = os.uptime();
+    func(upTime);
+}
+
+getUpTime((upTime) => {
+    console.log(`System uptime: ${upTime} seconds`);
+})
