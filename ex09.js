@@ -14,3 +14,9 @@
 const os = require("os");
 
 // write your code here
+const cpus = os.cpus();
+let count = 0;
+cpus.forEach((cpu) => {
+    console.log(`CPU ${count}: ${cpu.model}`);
+    count++;
+})
