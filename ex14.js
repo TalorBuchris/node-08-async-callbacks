@@ -18,3 +18,23 @@
 // Run: node ex14.js
 
 // write your code here
+
+let count = 3;
+const delay = 500 + Math.random() * 1000;
+console.log(String(count));
+setTimeout(() => {
+    count--;
+    const delay = 500 + Math.random() * 1000;
+    console.log(String(count));
+    setTimeout(() => {
+        count--;
+        const delay = 500 + Math.random() * 1000;
+        console.log(String(count));
+        setTimeout(() => {
+            count--;
+            const delay = 500 + Math.random() * 1000;
+            console.log(String(count));
+            console.log('Done!');
+        }, delay);
+    }, delay);
+}, delay);
